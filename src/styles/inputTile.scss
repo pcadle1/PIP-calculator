@@ -1,0 +1,28 @@
+.input-tile{
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: bold;
+  color: #192024;
+  border-radius: 8px;
+  box-shadow: 0 -1px 4px 0 rgba(25, 32, 36, 0.04),
+    0 3px 6px 0 rgba(25, 32, 36, 0.16);
+  height: 480px;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  // align-items: center;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 50px;
+}
+
+.pip{
+  text-align: center;
+}
+
