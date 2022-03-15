@@ -12,6 +12,25 @@ const InputTile = (props) => {
 
   const [pip, setPip] = useState('')
 
+  const reset = () => {
+    setInput({
+      volume: 500,
+      iTime: 1,
+      resistance: 10,
+      compliance: 50,
+      peep: 5,
+      autoPeep: 0
+    })
+    setPip(calculatePip({
+      volume: 500,
+      iTime: 1,
+      resistance: 10,
+      compliance: 50,
+      peep: 5,
+      autoPeep: 0
+    }))
+  }
+
   const handleChange = (event) => {
     event.preventDefault()
     setInput({...input, [event.currentTarget.name]: event.currentTarget.value})
@@ -28,7 +47,7 @@ const InputTile = (props) => {
   return(
     <div className="input-tile">
       <div className="input">
-        <label for="volume">Volume</label>
+        <label htmlFor="volume">Volume</label>
         <input 
           type="range" 
           name="volume" 
@@ -42,7 +61,7 @@ const InputTile = (props) => {
           </div>
       </div>
       <div className="input">
-        <label for="iTime">iTime</label>
+        <label htmlFor="iTime">iTime</label>
         <input 
           type="range"  
           name="iTime" 
@@ -57,7 +76,7 @@ const InputTile = (props) => {
           </div>
       </div>
       <div className="input">
-        <label for="resistance">Resistance</label>
+        <label htmlFor="resistance">Resistance</label>
         <input 
           type="range" 
           name="resistance" 
@@ -71,7 +90,7 @@ const InputTile = (props) => {
           </div>
       </div>
       <div className="input">
-        <label for="compliance">Compliance</label>
+        <label htmlFor="compliance">Compliance</label>
         <input 
           type="range" 
           name="compliance" 
@@ -85,7 +104,7 @@ const InputTile = (props) => {
           </div>
       </div>
       <div className="input">
-        <label for="peep">Peep</label>
+        <label htmlFor="peep">Peep</label>
         <input 
           type="range" 
           name="peep" 
@@ -99,7 +118,7 @@ const InputTile = (props) => {
           </div>
       </div>
       <div className="input">
-        <label for="autoPeep">autoPeep</label>
+        <label htmlFor="autoPeep">autoPeep</label>
         <input 
           type="range" 
           name="autoPeep" 
@@ -116,6 +135,7 @@ const InputTile = (props) => {
       <div className="pip">
         {pip}
       </div>
+      <div className = "reset" onClick={reset}>Reset</div>
     </div>
   )
 }
